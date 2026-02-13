@@ -32,7 +32,7 @@ Este proyecto utiliza popen() con tasklist para obtener procesos reales del sist
 contacto y trabajar con procesos reales y como se obtienen.
 ### Criterios para procesos sospechosos
 Los criterios principales que se trabajaron fueron los procesos de consola o terminal ya sea en cmd o PowerShell.
-###Salida generada
+### Salida generada
 El archivo incluye:
 Fecha y hora del análisis
 Lista completa de procesos
