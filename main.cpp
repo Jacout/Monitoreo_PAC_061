@@ -7,7 +7,7 @@
 using namespace std;
 
 //developed by Jacob Rodriguez
-int maint(){
+int main(){
     try{
     int modo_a, cantidad;
     string ArchivoSalida;
@@ -16,14 +16,14 @@ int maint(){
     cout << "1. Basico \n 2. estricto" << "\n";
     cin >> modo_a;
 
-    if (mod !=1 && modo != 2){
+    if (modo_a !=1 && modo_a != 2){
         throw invalid_argument("Modo invalido.");
     }
 
     cout << "Nombre del archivo de salida: ";
     cin >> ArchivoSalida;
 
-    cout << "Cantidad de procesos sosppechosos a ingresar: ";
+    cout << "Cantidad de procesos sospechosos a ingresar: ";
     cin >> cantidad;
 
     vector<string> sospechosos;
@@ -32,24 +32,24 @@ int maint(){
     for (int i = 0; i < cantidad; i++){
         cout << "Proceso sospechoso #" << i + 1 << ": ";
         cin >> nombre;
-        sosppechosos.push_back(nombre);
+        sospechosos.push_back(nombre);
     }
     
-    auto procesos = ObtenerProcesos();
+    auto procesos = obtenerProcesos();
 
     cout << "Procesos activos \n";
     for (const auto& p : procesos){
         cout << p.pid << " - " << p.nombre << " - " << p.memoria << "\n";
     }
 
-    auto riesgos = analizarProcesos(procesos, modo, sospechosos);
+    auto riesgos = analizarProcesos(procesos, modo_a, sospechosos);
 
     cout << "Procesos sospechosos \n";
     for (const auto& r : riesgos){
         cout << r.proceso.nombre << " -> " << r.nivel << " ("<< r.razon << ") \n";
     }
 
-    guardarRegistros(ArchivoSalida, procesos, riesgos);
+    guardarRegistro(ArchivoSalida, procesos, riesgos);
 
     cout << "Registro guardado correctamente. \n";
     }

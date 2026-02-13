@@ -1,12 +1,12 @@
 #include "Analisis.h"
 #include <algorithm>
 
-bool contiene(const std::vector<std::string>& listam const std::string& nombre)
+bool contiene(const std::vector<std::string>& lista, const std::string& nombre)
 {
     return std::find(lista.begin(), lista.end(), nombre) != lista.end();
 }
 
-std::vector<PrcoesoRiesgo> analizarProcesos(
+std::vector<ProcesoRiesgo> analizarProcesos(
     const std::vector<Proceso>& procesos,
     int modo,
     const std::vector<std::string>& sospechososUsuario
@@ -14,7 +14,7 @@ std::vector<PrcoesoRiesgo> analizarProcesos(
 {
     std::vector<ProcesoRiesgo> riesgos;
 
-    for (conts auto& p : procesos){
+    for (const auto& p : procesos){
         if (contiene(sospechososUsuario, p.nombre)){
             riesgos.push_back({p, "Proceso marcado por el usuario","Alto"});
 

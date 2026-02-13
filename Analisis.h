@@ -15,8 +15,8 @@ struct ProcesoRiesgo{
 
 
 vector<ProcesoRiesgo> analizarProcesos(
-    const vector<proceso>& procesos,
-    int modo_a
+    const vector<Proceso>& procesos,
+    int modo_a,
     const vector<string>& sospechososUsuario
 );
 
