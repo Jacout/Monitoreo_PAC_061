@@ -12,7 +12,7 @@ el sistema y un ardua investigación, enfocado en SO Windows.
 - Jahir Guadalupe Salazar Esparza — Naizard
 ## Instrucciones de compilación y ejecución
 ### Requisitos
-- Sistema operativo: [Windows/Linux/macOS]
+- Sistema operativo: Windows
 - Compilador: g++, clang o MSVC
 - Librerías utilizadas: Se utilizo tasklist usando popen()
 ### Compilación
